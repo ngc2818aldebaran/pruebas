@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "8da4dc3b-4fbd-4cc4-b54f-88bdc3aa6638",
+		"name": "Transbank Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5000/people/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8ce05ab2-5ad4-4c65-84d1-697ad9579cd2",
+						"exec": [
+							"pm.test(\"REspuesta en GET de id\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"598f3cb7-b916-4aa8-9b4e-935f2a42e3b5\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/people/598f3cb7-b916-4aa8-9b4e-935f2a42e3b5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"people",
+						"598f3cb7-b916-4aa8-9b4e-935f2a42e3b5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/people/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "46590124-1769-47d3-b2ef-a316f8675711",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"firstName\": \"test1\",\n\"lastName\": \"test1\",\n\"uuid\": 12\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/people/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"people",
+						""
+					]
+				},
+				"description": "test1"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/people/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8ce05ab2-5ad4-4c65-84d1-697ad9579cd2",
+						"exec": [
+							"pm.test(\"REspuesta en GET de id\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"598f3cb7-b916-4aa8-9b4e-935f2a42e3b5\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/people/598f3cb7-b916-4aa8-9b4e-935f2a42e3b5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"people",
+						"598f3cb7-b916-4aa8-9b4e-935f2a42e3b5"
+					]
+				},
+				"description": "test2"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/people/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "46590124-1769-47d3-b2ef-a316f8675711",
+						"exec": [
+							"pm.test(\"Obtengo Rspuesta OK\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200]);",
+							"});",
+							"pm.test(\"El cuerpo contiene nombre\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"test1\");",
+							"});",
+							"pm.test(\"El cuerpo contiene apellido\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"test1\");",
+							"});",
+							"",
+							"pm.test(\"el cuerpo contiene id\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"id\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"firstName\": \"test1\",\n\"lastName\": \"test1\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/people/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"people",
+						""
+					]
+				},
+				"description": "test1"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
